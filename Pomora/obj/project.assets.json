@@ -33049,24 +33049,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kevin\\.nuget\\packages\\": {},
+    "C:\\Users\\benja\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\ASP.NET\\Pomora\\Pomora\\Pomora.csproj",
+      "projectUniqueName": "C:\\Users\\benja\\Source\\Repos\\Pomora\\Pomora\\Pomora.csproj",
       "projectName": "Pomora",
-      "projectPath": "C:\\ASP.NET\\Pomora\\Pomora\\Pomora.csproj",
-      "packagesPath": "C:\\Users\\kevin\\.nuget\\packages\\",
-      "outputPath": "C:\\ASP.NET\\Pomora\\Pomora\\obj\\",
+      "projectPath": "C:\\Users\\benja\\Source\\Repos\\Pomora\\Pomora\\Pomora.csproj",
+      "packagesPath": "C:\\Users\\benja\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\benja\\Source\\Repos\\Pomora\\Pomora\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\kevin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\benja\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
