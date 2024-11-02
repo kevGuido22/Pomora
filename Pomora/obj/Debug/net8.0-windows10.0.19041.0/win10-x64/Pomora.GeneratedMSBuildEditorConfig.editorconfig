@@ -37,11 +37,11 @@ build_metadata.AdditionalFiles.ManifestResourceName = Pomora.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
 
-[C:/laragon/www/Pomora/Pomora/Pages/CronometerPage.xaml]
+[C:/laragon/www/Pomora/Pomora/Pages/ChronometerPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = Pomora.Pages.CronometerPage.xaml
-build_metadata.AdditionalFiles.TargetPath = Pages\CronometerPage.xaml
-build_metadata.AdditionalFiles.RelativePath = Pages\CronometerPage.xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Pomora.Pages.ChronometerPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\ChronometerPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\ChronometerPage.xaml
 
 [C:/laragon/www/Pomora/Pomora/Pages/PomodoroPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml

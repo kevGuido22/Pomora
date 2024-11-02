@@ -63,7 +63,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Pages\CronometerPage.xaml">
+	  <Compile Update="Pages\ChronometerPage.xaml.cs">
+	    <DependentUpon>ChronometerPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Pages\ChronometerPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\PomodoroPage.xaml">
