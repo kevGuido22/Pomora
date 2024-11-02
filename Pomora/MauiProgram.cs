@@ -13,6 +13,8 @@ namespace Pomora
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                    fonts.AddFont("K2D-Regular.ttf", "K2DRegular");
+                    fonts.AddFont("K2D-Bold.ttf", "K2DBold");
                 });
 
 #if DEBUG
