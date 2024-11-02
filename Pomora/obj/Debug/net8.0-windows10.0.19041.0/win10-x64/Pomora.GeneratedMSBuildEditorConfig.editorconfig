@@ -43,6 +43,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = Pomora.Pages.PomodoroPage.
 build_metadata.AdditionalFiles.TargetPath = Pages\PomodoroPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\PomodoroPage.xaml
 
+[C:/ASP.NET/Pomora/Pomora/Pages/TestPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Pomora.Pages.TestPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\TestPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\TestPage.xaml
+
 [C:/ASP.NET/Pomora/Pomora/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Pomora.Resources.Styles.Colors.xaml

@@ -3,10 +3,46 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Pomora.Pages.PomodoroPage"
              Title="PomodoroPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+    <VerticalStackLayout Padding="20">
+
+        <Frame Margin="0, 80, 0, 5"
+               BorderColor="Black"
+               CornerRadius="5"
+               HasShadow="False"
+               BackgroundColor="Transparent"
+               Padding="30"
+
+               >
+            <Grid>
+                <Label Text="Enfoque" FontFamily="K2DRegular"></Label>
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                    <Entry x:Name="MinutesEntry"  Keyboard="Numeric" TextChanged="HandleMinutesEntry" FontSize="60" Text="15" MinimumWidthRequest="100" HorizontalTextAlignment="Center" FontFamily="K2DBold"></Entry>
+                    <Label
+                        Text=":"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        FontSize="40"
+                        FontFamily="K2DBold"
+                        />
+                    <Entry  MaxLength="10" x:Name="SecondsEntry"  Keyboard="Numeric" TextChanged="HandleSecondsEntry" FontSize="60" Text="00" MinimumWidthRequest="100" HorizontalTextAlignment="Center" FontFamily="K2DBold"></Entry>
+                </HorizontalStackLayout>
+            </Grid>
+        </Frame>
+
+        <Grid>
+            <Label
+                Text="Mantén el enfoque,&#x0a;tu esfuerzo dará frutos"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                FontSize="15"
+                FontFamily="K2DRegular"
+                HorizontalTextAlignment="Center"
+                />
+        </Grid>
+
+        <Grid Margin="0, 20, 0, 0">
+            <Button x:Name="StartButton" Clicked="StartPomodoro" Text="Iniciar" FontSize="20" FontFamily="K2DRegular" CornerRadius="200" HeightRequest="100"
+                    WidthRequest="100"></Button>
+        </Grid>
     </VerticalStackLayout>
 </ContentPage>

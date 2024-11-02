@@ -1,4 +1,6 @@
-﻿namespace Pomora
+﻿using Pomora.Pages;
+
+namespace Pomora
 {
     public partial class App : Application
     {
