@@ -1,1 +1,62 @@
+# Archivos de compilación
+bin/
+obj/
+
+# Paquetes de NuGet
+*.nupkg
+*.snupkg
+*.nuspec
+packages/
+.nuget/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Archivos de configuración de usuario
 .vs/
+.vscode/
+.vscode/settings.json
+*.user
+*.userosscache
+*.suo
+*.userprefs
+.idea/
+*.rsuser
+
+# Archivos de configuración de macOS y Xcode
+xcuserdata/
+*.xcworkspace
+*.xcodeproj
+*.ipa
+*.dSYM/
+*.app/
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.xcuserstate
+
+# Archivos generados para Android
+*.apk
+*.ap_
+*.dex
+*.class
+*.log
+
+# Archivos generados para iOS
+*.ipa
+*.xcuserstate
+
+# Configuración de Firebase y Google Services (si aplica)
+google-services.json
+GoogleService-Info.plist
+
+# Configuración de secretos y claves
+secrets.json
+*.key
+
+# Configuración de dependencias locales
+node_modules/
+*.log
+yarn-error.log
+npm-debug.log

@@ -5,7 +5,13 @@
     <ActiveDebugFramework>net8.0-android</ActiveDebugFramework>
     <ActiveDebugProfile>Samsung SM-A356E (Android 14.0 - API 34)</ActiveDebugProfile>
     <SelectedPlatformGroup>PhysicalDevice</SelectedPlatformGroup>
+    <DefaultDevice>pixel_5_-_api_34</DefaultDevice>
   </PropertyGroup>
+  <ItemGroup>
+    <MauiXaml Update="Pages\PomodoroPage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+  </ItemGroup>
   <ItemGroup>
     <None Update="App.xaml">
       <SubType>Designer</SubType>
