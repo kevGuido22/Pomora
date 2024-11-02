@@ -1042,3 +1042,4 @@ C:\ASP.NET\Pomora\Pomora\obj\Debug\net8.0-android\stamp\_ConvertResourcesCases.s
 C:\ASP.NET\Pomora\Pomora\obj\Debug\net8.0-android\stamp\_GenerateJavaStubs.stamp
 C:\ASP.NET\Pomora\Pomora\obj\Debug\net8.0-android\stamp\_GeneratePackageManagerJava.stamp
 C:\ASP.NET\Pomora\Pomora\obj\Debug\net8.0-android\stamp\_ResolveLibraryProjectImports.stamp
+C:\ASP.NET\Pomora\Pomora\obj\Debug\net8.0-android\Pomora.sourcelink.json
