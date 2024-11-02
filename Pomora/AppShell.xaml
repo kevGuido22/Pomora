@@ -3,13 +3,20 @@
     x:Class="Pomora.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:Pomora"
-    Shell.FlyoutBehavior="Disabled"
+    xmlns:views="clr-namespace:Pomora.Pages"
     Title="Pomora">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+
+    <TabBar>
+        <Tab Title="Pomora">
+            <ShellContent ContentTemplate="{DataTemplate views:PomodoroPage}" Route="PomodoroPage"/>
+        </Tab>
+        <Tab Title="Test">
+            <ShellContent ContentTemplate="{DataTemplate views:TestPage}" Route="TestPage"/>
+        </Tab>
+    </TabBar>
+
+
 
 </Shell>
+

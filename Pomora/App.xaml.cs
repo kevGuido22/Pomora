@@ -8,7 +8,7 @@ namespace Pomora
         {
             InitializeComponent();
 
-            MainPage = new PomodoroPage();
+            MainPage = new AppShell();
         }
     }
 }
