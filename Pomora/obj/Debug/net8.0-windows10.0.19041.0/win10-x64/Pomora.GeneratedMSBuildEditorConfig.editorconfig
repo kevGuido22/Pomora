@@ -8,7 +8,7 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Pomora
-build_property.ProjectDir = C:\ASP.NET\Pomora\Pomora\
+build_property.ProjectDir = C:\Users\benja\source\repos\Pomora\Pomora\Pomora\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.CsWinRTAotOptimizerEnabled = true
@@ -19,43 +19,49 @@ build_property.CsWinRTCcwLookupTableGeneratorEnabled = true
 build_property.CsWinRTMergeReferencedActivationFactories = 
 build_property.CsWinRTAotWarningLevel = 
 
-[C:/ASP.NET/Pomora/Pomora/App.xaml]
+[C:/Users/benja/source/repos/Pomora/Pomora/Pomora/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Pomora.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
-[C:/ASP.NET/Pomora/Pomora/AppShell.xaml]
+[C:/Users/benja/source/repos/Pomora/Pomora/Pomora/AppShell.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Pomora.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
-[C:/ASP.NET/Pomora/Pomora/MainPage.xaml]
+[C:/Users/benja/source/repos/Pomora/Pomora/Pomora/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Pomora.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
 
-[C:/ASP.NET/Pomora/Pomora/Pages/PomodoroPage.xaml]
+[C:/Users/benja/source/repos/Pomora/Pomora/Pomora/Pages/ChronometerPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Pomora.Pages.ChronometerPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\ChronometerPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\ChronometerPage.xaml
+
+[C:/Users/benja/source/repos/Pomora/Pomora/Pomora/Pages/PomodoroPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Pomora.Pages.PomodoroPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\PomodoroPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\PomodoroPage.xaml
 
-[C:/ASP.NET/Pomora/Pomora/Pages/TestPage.xaml]
+[C:/Users/benja/source/repos/Pomora/Pomora/Pomora/Pages/TestPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Pomora.Pages.TestPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\TestPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\TestPage.xaml
 
-[C:/ASP.NET/Pomora/Pomora/Resources/Styles/Colors.xaml]
+[C:/Users/benja/source/repos/Pomora/Pomora/Pomora/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Pomora.Resources.Styles.Colors.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
 
-[C:/ASP.NET/Pomora/Pomora/Resources/Styles/Styles.xaml]
+[C:/Users/benja/source/repos/Pomora/Pomora/Pomora/Resources/Styles/Styles.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Pomora.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml

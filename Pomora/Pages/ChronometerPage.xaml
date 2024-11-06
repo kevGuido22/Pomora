@@ -1,0 +1,79 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pomora.Pages.ChronometerPage"
+             Title="ChronometerPage"
+             BackgroundColor="#151515">
+
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="15">
+
+        <Frame CornerRadius="10" 
+               BorderColor="#2C2B2B"
+               BackgroundColor="#2C2B2B"
+               Padding="20"
+               HorizontalOptions="Center"
+               VerticalOptions="Center">
+
+            <Grid RowDefinitions="Auto,Auto">
+                <Label Text="Cronómetro"
+                       FontSize="18"
+                       FontFamily="Outfit"
+                       TextColor="#DCDCDC"
+                       Opacity="0.5"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Start"
+                       Margin="0,0,0,10" />
+
+                <Label x:Name="TimerLabel"
+                       Grid.Row="1"
+                       Text="00:00:00"
+                       FontSize="60"
+                       FontFamily="K2DRegular"
+                       TextColor="#DCDCDC"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center" />
+            </Grid>
+        </Frame>
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10">
+            <ImageButton x:Name="StartButton"
+             Source="start.png"
+             WidthRequest="100"
+             HeightRequest="100"
+             BackgroundColor="#2C2B2B"
+             CornerRadius="200"
+             Padding="0"
+             HorizontalOptions="Center"
+             VerticalOptions="Center"
+             Aspect="AspectFit"
+             Clicked="OnStartClicked"
+             IsVisible="True" />
+
+            <ImageButton x:Name="PauseButton"
+             Source="pause.png"
+             WidthRequest="100"
+             HeightRequest="100"
+             BackgroundColor="#DF4E4E"
+             CornerRadius="200"
+             Padding="0"
+             HorizontalOptions="Center"
+             VerticalOptions="Center"
+             Aspect="AspectFit"
+             Clicked="OnPauseClicked"
+             IsVisible="False" />
+
+            <ImageButton x:Name="ResetButton"
+             Source="restart.png"
+             WidthRequest="100"
+             HeightRequest="100"
+             BackgroundColor="#2C2B2B"
+             CornerRadius="200"
+             Padding="0"
+             HorizontalOptions="Center"
+             VerticalOptions="Center"
+             Aspect="AspectFit"
+             Clicked="OnResetClicked"
+             IsVisible="False" />
+
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
