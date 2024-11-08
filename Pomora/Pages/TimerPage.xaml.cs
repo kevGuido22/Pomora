@@ -18,6 +18,24 @@ namespace Pomora.Pages
             MinutesEntry.TextChanged += OnTimeEntryTextChanged;
             SecondsEntry.TextChanged += OnTimeEntryTextChanged;
         }
+        private void OnResetClicked(object sender, EventArgs e)
+        {
+            // Detener el temporizador y reiniciar el tiempo
+            OnStopTimer();
+
+            // Restablecer el tiempo en los campos de entrada (puedes ajustar los valores iniciales aquí si lo deseas)
+            HoursEntry.Text = "00";
+            MinutesEntry.Text = "00";
+            SecondsEntry.Text = "00";
+            _remainingTimeInSeconds = 0;
+
+            // Mostrar el botón de inicio y ocultar el botón de reinicio
+            
+            StartButton.IsVisible = true;
+            StartButton.Text = "Start";
+            ResetButton.IsVisible = false;
+
+        }
 
         private async void OnStartButtonClicked(object sender, EventArgs e)
         {
@@ -26,6 +44,7 @@ namespace Pomora.Pages
                 // Detener el temporizador si ya está en ejecución
                 OnStopTimer();
                 ((Button)sender).Text = "Start"; // Cambiar el texto a "Start"
+                ResetButton.IsVisible = false; // Ocultar el botón de Reset cuando se detiene el temporizador
             }
             else
             {
@@ -47,6 +66,9 @@ namespace Pomora.Pages
 
                     _isTimerRunning = true; // Marcar que el temporizador está en ejecución
                     ((Button)sender).Text = "Stop"; // Cambiar el texto a "Stop"
+
+                    // Hacer visible el botón de Reset cuando el temporizador está corriendo
+                    ResetButton.IsVisible = true;
                 }
                 else
                 {
@@ -92,6 +114,7 @@ namespace Pomora.Pages
                 {
                     OnStopTimer(); // Usar el método de parada para limpiar todo
                     StartButton.Text = "Start"; // Cambiar el texto del botón de nuevo a "Start"
+                    ResetButton.IsVisible = false;
                     DisplayAlert("Tiempo Completo", "La cuenta regresiva ha terminado.", "OK");
                 });
             }
@@ -114,5 +137,6 @@ namespace Pomora.Pages
                 entry.TextColor = Colors.Red;
             }
         }
+        
     }
 }
