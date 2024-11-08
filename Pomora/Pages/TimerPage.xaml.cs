@@ -112,6 +112,7 @@ namespace Pomora.Pages
                 // Detener el temporizador cuando llegue a 0
                 MainThread.BeginInvokeOnMainThread(() =>
                 {
+                    activateVibration();
                     OnStopTimer(); // Usar el método de parada para limpiar todo
                     StartButton.Text = "Start"; // Cambiar el texto del botón de nuevo a "Start"
                     ResetButton.IsVisible = false;
@@ -137,6 +138,15 @@ namespace Pomora.Pages
                 entry.TextColor = Colors.Red;
             }
         }
-        
+        private async void activateVibration()
+        {
+            for (int i = 0; i < 5; i++) // Número de pulsos
+            {
+                Vibration.Vibrate(); // Inicia la vibración
+                await Task.Delay(500); // Duración de la vibración (500 ms)
+                                       // Espera un intervalo sin vibrar
+                await Task.Delay(500); // Pausa entre pulsos (500 ms)
+            }
+        }
     }
 }
