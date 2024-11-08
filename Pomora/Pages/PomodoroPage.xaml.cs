@@ -1,5 +1,7 @@
 using System;
 using System.Timers;
+using Microsoft.Maui.Controls;
+
 
 
 namespace Pomora.Pages;
@@ -11,6 +13,7 @@ public partial class PomodoroPage : ContentPage
     int minutes = 0;
     int seconds = 0;
     bool isPomodoroActivated = false;
+    bool isBreaktime = false;
 
     public PomodoroPage()
 	{
@@ -71,11 +74,6 @@ public partial class PomodoroPage : ContentPage
             _timer.Stop();
             _timer.Dispose();
         }
-
-        
-
-
- 
     }
 
     private void OnTimedEvent(object sender, ElapsedEventArgs e)
@@ -97,12 +95,30 @@ public partial class PomodoroPage : ContentPage
                 //end of the time, the var seconds do not has more time
                 if (seconds == 0)
                 {
-                    base.OnDisappearing();
-                    _timer.Stop();
-                    _timer.Dispose();
-                    StartButton.Text = "Start";
+                    //base.OnDisappearing();
+                    //_timer.Stop();
+                    //_timer.Dispose();
+                    //StartButton.Text = "Start";
                     MinutesEntry.Text = "15";
                     SecondsEntry.Text = "00";
+                    //Vibration.Vibrate(TimeSpan.FromSeconds(4));
+                    activateVibration();
+                    isBreaktime = !isBreaktime;
+                    if (isBreaktime)
+                    {
+                        PomodoroActionText.Text = "Break Time";
+                        minutes = 10;
+                        seconds = 0;
+
+                        if (seconds == 0)
+                        {
+                            if (minutes > 0)
+                            {
+                                minutes--;
+                                seconds = 60;
+                            }
+                        }
+                    }
                 }
             }
 
@@ -132,5 +148,15 @@ public partial class PomodoroPage : ContentPage
 
             seconds -= 1;
         });
+    }
+
+    private async void activateVibration() {
+        for (int i = 0; i < 5; i++) // Número de pulsos
+        {
+            Vibration.Vibrate(); // Inicia la vibración
+            await Task.Delay(500); // Duración de la vibración (500 ms)
+                                   // Espera un intervalo sin vibrar
+            await Task.Delay(500); // Pausa entre pulsos (500 ms)
+        }
     }
 }
