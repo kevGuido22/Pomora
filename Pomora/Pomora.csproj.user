@@ -11,7 +11,7 @@
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
   </PropertyGroup>
   <ItemGroup>
-    <MauiXaml Update="Pages\ChronometerPage.xaml">
+    <MauiXaml Update="Pages\TimerPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="Pages\PomodoroPage.xaml">
