@@ -15,9 +15,6 @@
         <Tab Title="Pomora">
             <ShellContent ContentTemplate="{DataTemplate views:PomodoroPage}" Route="PomodoroPage"/>
         </Tab>
-        <Tab Title="Test">
-            <ShellContent ContentTemplate="{DataTemplate views:TestPage}" Route="TestPage"/>
-        </Tab>
         <Tab Title="Chronometer">
             <ShellContent ContentTemplate="{DataTemplate views:ChronometerPage}" Route="ChronometerPage"/>
         </Tab>

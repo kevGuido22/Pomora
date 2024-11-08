@@ -2,20 +2,24 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Pomora.Pages.PomodoroPage"
-             Title="PomodoroPage">
+             Title="PomodoroPage"
+             BackgroundColor="#151515">
     <VerticalStackLayout Padding="20">
 
         <Frame Margin="0, 30, 0, 5"
-               BorderColor="Black"
-               CornerRadius="5"
+               BorderColor="#2C2B2B"
+               BackgroundColor="#2C2B2B"
+               CornerRadius="10"
                HasShadow="False"
-               BackgroundColor="Transparent"
                Padding="30"
 
                >
             <Grid>
-                <Label x:Name="PomodoroActionText" Text="Enfoque" FontFamily="K2DRegular"></Label>
-                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                <Label x:Name="PomodoroActionText" Text="Enfoque" FontFamily="K2DRegular"
+                       TextColor="#DCDCDC"
+                       Opacity="0.5"
+                       FontSize="18"></Label>
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10" Margin="0, 10, 0, 0">
                     <Entry x:Name="MinutesEntry"  Keyboard="Numeric" TextChanged="HandleMinutesEntry" FontSize="60" Text="15" MinimumWidthRequest="100" HorizontalTextAlignment="Center" FontFamily="K2DBold"></Entry>
                     <Label
                         Text=":"
