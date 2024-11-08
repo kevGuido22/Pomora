@@ -3,8 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Pomora.Pages.TimerPage"
              Title="TimerPage"
-             BackgroundColor="#121212">
-    <!-- Color de fondo oscuro -->
+             BackgroundColor="#0B0E14">
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -14,75 +13,65 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <VerticalStackLayout
-        VerticalOptions="Center"
-        HorizontalOptions="Center"
-        Padding="20"
-        Spacing="20">
+    <VerticalStackLayout Padding="20">
+        <Frame Margin="0, 30, 0, 5" BorderColor="#212631" BackgroundColor="#212631" CornerRadius="10" HasShadow="False" Padding="30">
+            <Grid RowDefinitions="Auto, Auto">
+                <Label Text="Cronómetro" FontSize="18" FontFamily="K2DRegular" TextColor="#C0C7D4" Opacity="0.5" Grid.Row="0" />
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="5" Grid.Row="1">
+                    <Entry FontFamily="K2DBold" x:Name="HoursEntry" Placeholder="HH" Keyboard="Numeric" FontSize="35" WidthRequest="90" MaxLength="2" HorizontalTextAlignment="Center" TextColor="#F0F1F5" BackgroundColor="#1E1E1E" HeightRequest="80" />
+                    <Label FontFamily="K2DBold" Text=":" VerticalOptions="Center" FontSize="30" HorizontalOptions="Center" TextColor="#F0F1F5" />
+                    <Entry FontFamily="K2DBold" x:Name="MinutesEntry" Placeholder="MM" Keyboard="Numeric" FontSize="35" WidthRequest="90" MaxLength="2" HorizontalTextAlignment="Center" TextColor="#F0F1F5" BackgroundColor="#1E1E1E" HeightRequest="80" />
+                    <Label FontFamily="K2DBold" Text=":" VerticalOptions="Center" FontSize="30" HorizontalOptions="Center" TextColor="#F0F1F5" />
+                    <Entry FontFamily="K2DBold" x:Name="SecondsEntry" Placeholder="SS" Keyboard="Numeric" FontSize="35" WidthRequest="90" MaxLength="2" HorizontalTextAlignment="Center" TextColor="#F0F1F5" BackgroundColor="#1E1E1E" HeightRequest="80" />
+                </HorizontalStackLayout>
+            </Grid>
+        </Frame>
 
-        <HorizontalStackLayout HorizontalOptions="Center" Spacing="5">
-            <Entry
-                x:Name="HoursEntry"
-                Placeholder="HH"
-                Keyboard="Numeric"
-                FontSize="40"
-                WidthRequest="90"
-                MaxLength="2"
-                HorizontalTextAlignment="Center"
-                TextColor="#FFFFFF"
-                BackgroundColor="#1E1E1E"
-                HeightRequest="80" />
-
-            <Label Text=":" VerticalOptions="Center"
-                   FontSize="64"
+        <Grid RowDefinitions="Auto, Auto"  Margin="0, 70, 0, 0">
+            <Label VerticalOptions="Center"
                    HorizontalOptions="Center"
-                   TextColor="#FFFFFF"/>
-            <!-- Color del texto del Label -->
+                   FontSize="15"
+                   Margin="10"
+                   FontFamily="K2DRegular"
+                   HorizontalTextAlignment="Center"
+                   Grid.Row="0"
+                   Opacity="0.7">
+                <Label.FormattedText>
+                    <FormattedString >
+                        <Span FontFamily="K2DRegular" Text="“The only thing that overcomes hard luck is " />
+                        <Span FontFamily="K2DRegular" Text="hard work" TextColor="Red" />
+                        <Span FontFamily="K2DRegular" Text=".”" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
 
-            <Entry
-                x:Name="MinutesEntry"
-                Placeholder="MM"
-                Keyboard="Numeric"
-                FontSize="40"
-                WidthRequest="90"
-                MaxLength="2"
-                HorizontalTextAlignment="Center"
-                TextColor="#FFFFFF"
-                BackgroundColor="#1E1E1E"
-                HeightRequest="80" />
-
-            <Label Text=":" VerticalOptions="Center"
-                   FontSize="64"
+            <Label Text="-Harry Golder"
+                   VerticalOptions="Center"
                    HorizontalOptions="Center"
-                   TextColor="#FFFFFF"/>
+                   FontSize="15"
+                   Margin="0"
+                   FontFamily="K2DRegular"
+                   HorizontalTextAlignment="Center"
+                   Grid.Row="1" Opacity="0.5"/>
+        </Grid>
 
-            <Entry
-                x:Name="SecondsEntry"
-                Placeholder="SS"
-                Keyboard="Numeric"
-                FontSize="40"
-                WidthRequest="90"
-                MaxLength="2"
-                HorizontalTextAlignment="Center"
-                TextColor="#FFFFFF"
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10" Margin="0, 160, 0, 0">
+            <Button x:Name="StartButton" Text="Start" FontSize="20" FontFamily="K2DRegular" TextColor="White" WidthRequest="100" HeightRequest="100" BackgroundColor="#373E4E" CornerRadius="200" Padding="0" HorizontalOptions="Center" VerticalOptions="Center" Clicked="OnStartButtonClicked" />
+            <Button x:Name="ResetButton"
+                    Text="Reset"
+                    FontSize="20"
+                    FontFamily="K2DRegular"
+                    TextColor="White"
+                    WidthRequest="100"
+                    HeightRequest="100"
+                    BackgroundColor="#212631"
+                    CornerRadius="200"
+                    Padding="0"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Clicked="OnResetClicked"
+                    IsVisible="False" />
 
-                BackgroundColor="#1E1E1E"
-                HeightRequest="80" />
-        </HorizontalStackLayout>
-
-        <Button
-            x:Name="StartButton"
-            Text="Start"
-            Clicked="OnStartButtonClicked"
-            Margin="0,20,0,0"
-            BackgroundColor="#4CAF50"
-            TextColor="White"
-            FontSize="24"
-            HeightRequest="120"
-            WidthRequest="120"
-            CornerRadius="60"
-            Padding="10"/>
-
-
+        </StackLayout>
     </VerticalStackLayout>
 </ContentPage>
