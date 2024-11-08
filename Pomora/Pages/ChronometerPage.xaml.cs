@@ -21,28 +21,39 @@ namespace Pomora.Pages
 
         private void OnStartButtonClicked(object sender, EventArgs e)
         {
-            // Leer y convertir los valores de las entradas
-            int hours = int.TryParse(HoursEntry.Text, out int h) ? h : 0;
-            int minutes = int.TryParse(MinutesEntry.Text, out int m) ? m : 0;
-            int seconds = int.TryParse(SecondsEntry.Text, out int s) ? s : 0;
-
-            // Calcular el tiempo total en segundos
-            _remainingTimeInSeconds = (hours * 3600) + (minutes * 60) + seconds;
-
-            // Verificar si el temporizador ya está en ejecución
-            if (!_isTimerRunning)
+            if (_isTimerRunning)
             {
-                // Configurar el temporizador
-                _timer = new Timer(1000); // 1000 ms = 1 segundo
-                _timer.Elapsed += OnTimerElapsed;
-                _timer.AutoReset = true;
-                _timer.Start();
+                // Detener el temporizador si ya está en ejecución
+                OnStopTimer();
+                ((Button)sender).Text = "Start"; // Cambiar el texto a "Start"
+                ((Button)sender).BackgroundColor = Colors.Green;
+            }
+            else
+            {
+                // Leer y convertir los valores de las entradas
+                int hours = int.TryParse(HoursEntry.Text, out int h) ? h : 0;
+                int minutes = int.TryParse(MinutesEntry.Text, out int m) ? m : 0;
+                int seconds = int.TryParse(SecondsEntry.Text, out int s) ? s : 0;
 
-                _isTimerRunning = true; // Marcar que el temporizador está en ejecución
+                // Calcular el tiempo total en segundos
+                _remainingTimeInSeconds = (hours * 3600) + (minutes * 60) + seconds;
+
+                if (_remainingTimeInSeconds > 0)
+                {
+                    // Configurar el temporizador
+                    _timer = new Timer(1000); // 1000 ms = 1 segundo
+                    _timer.Elapsed += OnTimerElapsed;
+                    _timer.AutoReset = true;
+                    _timer.Start();
+
+                    _isTimerRunning = true; // Marcar que el temporizador está en ejecución
+                    ((Button)sender).Text = "Stop"; // Cambiar el texto a "Stop"
+                    ((Button)sender).BackgroundColor = Colors.Red;
+                }
             }
         }
 
-        private void OnStopTimer(object sender, EventArgs e)
+        private void OnStopTimer()
         {
             if (_timer != null)
             {
@@ -74,9 +85,12 @@ namespace Pomora.Pages
             else
             {
                 // Detener el temporizador cuando llegue a 0
-                OnStopTimer(sender, e); // Usar el método de parada para limpiar todo
                 MainThread.BeginInvokeOnMainThread(() =>
                 {
+                    OnStopTimer(); // Usar el método de parada para limpiar todo
+                    //((Button)sender).BackgroundColor = Colors.Green;
+                    StartButton.BackgroundColor = Colors.Green;
+                    StartButton.Text = "Start"; // Cambiar el texto del botón de nuevo a "Start"
                     DisplayAlert("Tiempo Completo", "La cuenta regresiva ha terminado.", "OK");
                 });
             }

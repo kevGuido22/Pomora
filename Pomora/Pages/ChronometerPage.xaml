@@ -64,31 +64,24 @@
                 MaxLength="2"
                 HorizontalTextAlignment="Center"
                 TextColor="#FFFFFF"
-                
+
                 BackgroundColor="#1E1E1E"
                 HeightRequest="80" />
         </HorizontalStackLayout>
 
         <Button
+            x:Name="StartButton"
             Text="Start"
             Clicked="OnStartButtonClicked"
             Margin="0,20,0,0"
             BackgroundColor="#4CAF50"
             TextColor="White"
             FontSize="24"
-            HeightRequest="60"
-            CornerRadius="8"
+            HeightRequest="120"
+            WidthRequest="120"
+            CornerRadius="60"
             Padding="10"/>
 
-        <Button
-            Text="Stop"
-            Clicked="OnStopTimer"
-            Margin="0,20,0,0"
-            BackgroundColor="#F44336"
-            TextColor="White"
-            FontSize="24"
-            HeightRequest="60"
-            CornerRadius="8"
-            Padding="10"/>
+
     </VerticalStackLayout>
 </ContentPage>
