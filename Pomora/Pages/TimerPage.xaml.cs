@@ -19,14 +19,13 @@ namespace Pomora.Pages
             SecondsEntry.TextChanged += OnTimeEntryTextChanged;
         }
 
-        private void OnStartButtonClicked(object sender, EventArgs e)
+        private async void OnStartButtonClicked(object sender, EventArgs e)
         {
             if (_isTimerRunning)
             {
-                // Detener el temporizador si ya est� en ejecuci�n
+                // Detener el temporizador si ya está en ejecución
                 OnStopTimer();
                 ((Button)sender).Text = "Start"; // Cambiar el texto a "Start"
-                ((Button)sender).BackgroundColor = Colors.Green;
             }
             else
             {
@@ -46,9 +45,13 @@ namespace Pomora.Pages
                     _timer.AutoReset = true;
                     _timer.Start();
 
-                    _isTimerRunning = true; // Marcar que el temporizador est� en ejecuci�n
+                    _isTimerRunning = true; // Marcar que el temporizador está en ejecución
                     ((Button)sender).Text = "Stop"; // Cambiar el texto a "Stop"
-                    ((Button)sender).BackgroundColor = Colors.Red;
+                }
+                else
+                {
+                    // Mostrar pop-up si no se ha ingresado ningún valor
+                    await DisplayAlert("Advertencia", "Por favor, ingrese un tiempo válido antes de iniciar el temporizador.", "OK");
                 }
             }
         }
@@ -87,10 +90,8 @@ namespace Pomora.Pages
                 // Detener el temporizador cuando llegue a 0
                 MainThread.BeginInvokeOnMainThread(() =>
                 {
-                    OnStopTimer(); // Usar el m�todo de parada para limpiar todo
-                    //((Button)sender).BackgroundColor = Colors.Green;
-                    StartButton.BackgroundColor = Colors.Green;
-                    StartButton.Text = "Start"; // Cambiar el texto del bot�n de nuevo a "Start"
+                    OnStopTimer(); // Usar el método de parada para limpiar todo
+                    StartButton.Text = "Start"; // Cambiar el texto del botón de nuevo a "Start"
                     DisplayAlert("Tiempo Completo", "La cuenta regresiva ha terminado.", "OK");
                 });
             }
