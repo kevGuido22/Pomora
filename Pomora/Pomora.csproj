@@ -57,12 +57,22 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Fonts\Group 56.svg" />
+	  <None Remove="Resources\Images\pause.png" />
+	  <None Remove="Resources\Images\restart.png" />
+	  <None Remove="Resources\Images\start.png" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Pages\ChronometerPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\PomodoroPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
