@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pomora.Pages.TimerPage"
+             Title="TimerPage"
+             BackgroundColor="#121212">
+    <!-- Color de fondo oscuro -->
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Resources/Styles/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <VerticalStackLayout
+        VerticalOptions="Center"
+        HorizontalOptions="Center"
+        Padding="20"
+        Spacing="20">
+
+        <HorizontalStackLayout HorizontalOptions="Center" Spacing="5">
+            <Entry
+                x:Name="HoursEntry"
+                Placeholder="HH"
+                Keyboard="Numeric"
+                FontSize="40"
+                WidthRequest="90"
+                MaxLength="2"
+                HorizontalTextAlignment="Center"
+                TextColor="#FFFFFF"
+                BackgroundColor="#1E1E1E"
+                HeightRequest="80" />
+
+            <Label Text=":" VerticalOptions="Center"
+                   FontSize="64"
+                   HorizontalOptions="Center"
+                   TextColor="#FFFFFF"/>
+            <!-- Color del texto del Label -->
+
+            <Entry
+                x:Name="MinutesEntry"
+                Placeholder="MM"
+                Keyboard="Numeric"
+                FontSize="40"
+                WidthRequest="90"
+                MaxLength="2"
+                HorizontalTextAlignment="Center"
+                TextColor="#FFFFFF"
+                BackgroundColor="#1E1E1E"
+                HeightRequest="80" />
+
+            <Label Text=":" VerticalOptions="Center"
+                   FontSize="64"
+                   HorizontalOptions="Center"
+                   TextColor="#FFFFFF"/>
+
+            <Entry
+                x:Name="SecondsEntry"
+                Placeholder="SS"
+                Keyboard="Numeric"
+                FontSize="40"
+                WidthRequest="90"
+                MaxLength="2"
+                HorizontalTextAlignment="Center"
+                TextColor="#FFFFFF"
+
+                BackgroundColor="#1E1E1E"
+                HeightRequest="80" />
+        </HorizontalStackLayout>
+
+        <Button
+            x:Name="StartButton"
+            Text="Start"
+            Clicked="OnStartButtonClicked"
+            Margin="0,20,0,0"
+            BackgroundColor="#4CAF50"
+            TextColor="White"
+            FontSize="24"
+            HeightRequest="120"
+            WidthRequest="120"
+            CornerRadius="60"
+            Padding="10"/>
+
+
+    </VerticalStackLayout>
+</ContentPage>

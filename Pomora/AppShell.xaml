@@ -21,6 +21,9 @@
         <Tab Title="Chronometer">
             <ShellContent ContentTemplate="{DataTemplate views:ChronometerPage}" Route="ChronometerPage"/>
         </Tab>
+        <Tab Title="Timer">
+            <ShellContent ContentTemplate="{DataTemplate views:TimerPage}" Route="TimerPage"/>
+        </Tab>
     </TabBar>
 
 
