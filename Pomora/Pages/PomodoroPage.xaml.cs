@@ -14,6 +14,8 @@ public partial class PomodoroPage : ContentPage
     int seconds = 0;
     bool isPomodoroActivated = false;
     bool isBreaktime = false;
+    int INITIAL_MINUTES = 0;
+    int INITIAL_SECONDS = 0;
 
     public PomodoroPage()
 	{
@@ -59,21 +61,88 @@ public partial class PomodoroPage : ContentPage
     private void StartPomodoro(object sender, EventArgs e) {
          minutes = int.Parse(MinutesEntry.Text);
          seconds = int.Parse(SecondsEntry.Text);
-         isPomodoroActivated = !isPomodoroActivated;
+         INITIAL_MINUTES = minutes;
+         INITIAL_SECONDS = seconds;
+         isPomodoroActivated = true;
+         StopButton.IsVisible = true;
+         SkipButton.IsVisible = true;
+         StartButton.IsVisible = false;
+         ResetButton.IsVisible = true;
 
         if (isPomodoroActivated) {
-            StartButton.Text = "Stop";
+            //StartButton.Text = "Stop";
             _timer = new System.Timers.Timer(1000);
             _timer.Elapsed += OnTimedEvent;
             _timer.Enabled = true;
         }
+        //else
+        //{
+        //    StartButton.Text = "Start";
+        //    base.OnDisappearing();
+        //    _timer.Stop();
+        //    _timer.Dispose();
+        //}
+    }
+
+    private void StopPomodoro(object sender, EventArgs e) {
+        isPomodoroActivated = false;
+        StopButton.IsVisible = false;
+        StartButton.IsVisible = true;
+        
+
+        base.OnDisappearing();
+        _timer.Stop();
+        _timer.Dispose();
+    }
+
+    private void SkipPomodoro(object sender, EventArgs e) {
+        isBreaktime = !isBreaktime;
+
+        if (isBreaktime) {
+            PomodoroActionText.Text = "Break Time";
+            minutes = 10;
+            seconds = 0;
+            activateVibration();
+        }
         else
         {
-            StartButton.Text = "Start";
-            base.OnDisappearing();
-            _timer.Stop();
-            _timer.Dispose();
+            PomodoroActionText.Text = "Focus";
+            minutes = INITIAL_MINUTES;
+            seconds = INITIAL_SECONDS;
+            activateVibration();
         }
+
+        if (seconds == 0)
+        {
+            if (minutes > 0)
+            {
+                minutes--;
+                seconds = 60;
+            }
+        }
+        keepFormatTime();
+    }
+
+    private void OnEntryFocused(object sender, FocusEventArgs e)
+    {
+        if (isPomodoroActivated) {
+            // Cancela el enfoque para que el teclado no se abra
+            ((Entry)sender).Unfocus();
+        }
+    }
+
+    private void ResetPomodoro(object sender, EventArgs e) {
+        _timer.Stop();
+        _timer.Dispose();
+        ResetButton.IsVisible = false;
+        StartButton.IsVisible= true;
+        SkipButton.IsVisible = false;
+        StopButton.IsVisible = false;
+        isPomodoroActivated = false;
+        PomodoroActionText.Text = "Focus";
+        minutes = INITIAL_MINUTES;
+        seconds = INITIAL_SECONDS;
+        keepFormatTime();
     }
 
     private void OnTimedEvent(object sender, ElapsedEventArgs e)
@@ -81,7 +150,6 @@ public partial class PomodoroPage : ContentPage
         // Esta acción se ejecutará cada segundo
         MainThread.BeginInvokeOnMainThread(() =>
         {
-
             //handle time
             if (seconds == 0) {
                 
@@ -95,13 +163,8 @@ public partial class PomodoroPage : ContentPage
                 //end of the time, the var seconds do not has more time
                 if (seconds == 0)
                 {
-                    //base.OnDisappearing();
-                    //_timer.Stop();
-                    //_timer.Dispose();
-                    //StartButton.Text = "Start";
                     MinutesEntry.Text = "15";
                     SecondsEntry.Text = "00";
-                    //Vibration.Vibrate(TimeSpan.FromSeconds(4));
                     activateVibration();
                     isBreaktime = !isBreaktime;
                     if (isBreaktime)
@@ -121,33 +184,35 @@ public partial class PomodoroPage : ContentPage
                     }
                 }
             }
-
-            //keep format for the minutes
-            if (minutes < 10)
-            {
-                //show two digits format
-                MinutesEntry.Text = "0" + minutes.ToString();
-            }
-            else
-            {
-                //show two digits format(default)
-                MinutesEntry.Text = minutes.ToString();
-            }
-
-            //keep format for the seconds
-            if (seconds < 10)
-            {
-                //show two digits format
-                SecondsEntry.Text = "0" + seconds.ToString();
-            }
-            else
-            {
-                //show two digits format(default)
-                SecondsEntry.Text = seconds.ToString();
-            }
-
-            seconds -= 1;
+            seconds--;
+            keepFormatTime();
         });
+    }
+
+    private void keepFormatTime() {
+        //keep format for the minutes
+        if (minutes < 10)
+        {
+            //show two digits format
+            MinutesEntry.Text = "0" + minutes.ToString();
+        }
+        else
+        {
+            //show two digits format(default)
+            MinutesEntry.Text = minutes.ToString();
+        }
+
+        //keep format for the seconds
+        if (seconds < 10)
+        {
+            //show two digits format
+            SecondsEntry.Text = "0" + seconds.ToString();
+        }
+        else
+        {
+            //show two digits format(default)
+            SecondsEntry.Text = seconds.ToString();
+        }
     }
 
     private async void activateVibration() {
