@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Pomora")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+e92488b28876b17a8fb65f99ff3110589d51b8d0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+515df6739294aeb1a119fb1bc8cdf14ffa681423")]
 [assembly: System.Reflection.AssemblyProductAttribute("Pomora")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Pomora")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
