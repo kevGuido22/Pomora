@@ -32,18 +32,35 @@
             </Grid>
         </Frame>
 
-        <Grid Margin="0, 70, 0, 0">
-            <Label
-                Text="Mantén el enfoque,&#x0a;tu esfuerzo dará frutos"
-                VerticalOptions="Center"
-                HorizontalOptions="Center"
-                FontSize="15"
-                FontFamily="K2DRegular"
-                HorizontalTextAlignment="Center"
-                />
+        <Grid RowDefinitions="Auto, Auto"  Margin="0, 70, 0, 0">
+            <Label VerticalOptions="Center"
+           HorizontalOptions="Center"
+           FontSize="15"
+           Margin="10"
+           FontFamily="K2DRegular"
+           HorizontalTextAlignment="Center"
+           Grid.Row="0"
+           Opacity="0.7">
+                <Label.FormattedText>
+                    <FormattedString >
+                        <Span FontFamily="K2DRegular" Text="“The only thing that overcomes hard luck is " />
+                        <Span FontFamily="K2DRegular" Text="hard work" TextColor="Red" />
+                        <Span FontFamily="K2DRegular" Text=".”" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Label Text="-Harry Golder"
+           VerticalOptions="Center"
+           HorizontalOptions="Center"
+           FontSize="15"
+           Margin="0"
+           FontFamily="K2DRegular"
+           HorizontalTextAlignment="Center"
+           Grid.Row="1" Opacity="0.5"/>
         </Grid>
 
-        <Grid Margin="0, 170, 0, 0">
+        <Grid Margin="0, 120, 0, 0">
             <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
                 <Button x:Name="StopButton" Clicked="StopPomodoro" Text="Stop" FontSize="20" FontFamily="K2DRegular" CornerRadius="200" HeightRequest="100"
                         WidthRequest="100" IsVisible="False"
