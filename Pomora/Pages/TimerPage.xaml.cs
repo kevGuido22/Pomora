@@ -1,5 +1,7 @@
-﻿using System.Timers;
+﻿
+using System.Timers;
 using Timer = System.Timers.Timer; // Alias para la clase Timer
+
 
 namespace Pomora.Pages
 {
@@ -140,12 +142,14 @@ namespace Pomora.Pages
         }
         private async void activateVibration()
         {
-            for (int i = 0; i < 5; i++) // Número de pulsos
+            for (int i = 0; i < 3; i++) // Número de pulsos
             {
                 Vibration.Vibrate(); // Inicia la vibración
+                
                 await Task.Delay(500); // Duración de la vibración (500 ms)
                                        // Espera un intervalo sin vibrar
                 await Task.Delay(500); // Pausa entre pulsos (500 ms)
+                
             }
         }
     }
