@@ -55,7 +55,7 @@
                    Grid.Row="1" Opacity="0.5"/>
         </Grid>
 
-        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10" Margin="0, 160, 0, 0">
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10" Margin="0, 150, 0, 0">
             <Button x:Name="StartButton" Text="Start" FontSize="20" FontFamily="K2DRegular"  WidthRequest="100" HeightRequest="100"  CornerRadius="200" Padding="0" HorizontalOptions="Center" VerticalOptions="Center" Clicked="OnStartButtonClicked" />
             <Button x:Name="ResetButton"
                     Text="Reset"

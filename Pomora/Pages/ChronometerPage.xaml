@@ -32,7 +32,35 @@
             </Grid>
         </Frame>
 
-        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10" Margin="0, 310, 0, 0">
+        <Grid RowDefinitions="Auto, Auto"  Margin="0, 70, 0, 0">
+            <Label VerticalOptions="Center"
+           HorizontalOptions="Center"
+           FontSize="15"
+           Margin="10"
+           FontFamily="K2DRegular"
+           HorizontalTextAlignment="Center"
+           Grid.Row="0"
+           Opacity="0.7">
+                <Label.FormattedText>
+                    <FormattedString >
+                        <Span FontFamily="K2DRegular" Text="“The only thing that overcomes hard luck is " />
+                        <Span FontFamily="K2DRegular" Text="hard work" TextColor="Red" />
+                        <Span FontFamily="K2DRegular" Text=".”" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Label Text="-Harry Golder"
+           VerticalOptions="Center"
+           HorizontalOptions="Center"
+           FontSize="15"
+           Margin="0"
+           FontFamily="K2DRegular"
+           HorizontalTextAlignment="Center"
+           Grid.Row="1" Opacity="0.5"/>
+        </Grid>
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10" Margin="0, 140, 0, 0">
             <Button x:Name="StartButton"
                     Text="Start"
                     FontSize="20"
