@@ -2,13 +2,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Pomora.Pages.ChronometerPage"
              Title="ChronometerPage"
-             BackgroundColor="#151515">
+             BackgroundColor="#0B0E14">
 
     <StackLayout Padding="20">
 
         <Frame CornerRadius="10"
-               BorderColor="#2C2B2B"
-               BackgroundColor="#2C2B2B"
+               BorderColor="#212631" BackgroundColor="#212631"
                Padding="30"
                HorizontalOptions="Fill"
                VerticalOptions="Center"
@@ -28,7 +27,7 @@
                        FontSize="60"
                        FontFamily="K2DBold"
                        TextColor="#DCDCDC"
-                       
+
                        Margin="0, 10, 0, 0"/>
             </Grid>
         </Frame>
@@ -38,10 +37,8 @@
                     Text="Start"
                     FontSize="20"
                     FontFamily="K2DRegular"
-                    TextColor="White"
                     WidthRequest="100"
                     HeightRequest="100"
-                    BackgroundColor="#2C2B2B"
                     CornerRadius="200"
                     Padding="0"
                     HorizontalOptions="Center"
@@ -50,7 +47,7 @@
                     IsVisible="True" />
 
             <Button x:Name="PauseButton"
-                    Text="Pause"
+                    Text="Stop"
                     FontSize="20"
                     FontFamily="K2DRegular"
                     TextColor="White"
@@ -71,7 +68,7 @@
                     TextColor="White"
                     WidthRequest="100"
                     HeightRequest="100"
-                    BackgroundColor="#2C2B2B"
+                    BackgroundColor="#212631"
                     CornerRadius="200"
                     Padding="0"
                     HorizontalOptions="Center"
