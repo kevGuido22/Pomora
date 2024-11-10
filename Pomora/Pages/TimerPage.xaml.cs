@@ -1,5 +1,7 @@
-﻿using System.Timers;
+﻿
+using System.Timers;
 using Timer = System.Timers.Timer; // Alias para la clase Timer
+
 
 namespace Pomora.Pages
 {
@@ -18,15 +20,33 @@ namespace Pomora.Pages
             MinutesEntry.TextChanged += OnTimeEntryTextChanged;
             SecondsEntry.TextChanged += OnTimeEntryTextChanged;
         }
+        private void OnResetClicked(object sender, EventArgs e)
+        {
+            // Detener el temporizador y reiniciar el tiempo
+            OnStopTimer();
 
-        private void OnStartButtonClicked(object sender, EventArgs e)
+            // Restablecer el tiempo en los campos de entrada (puedes ajustar los valores iniciales aquí si lo deseas)
+            HoursEntry.Text = "00";
+            MinutesEntry.Text = "00";
+            SecondsEntry.Text = "00";
+            _remainingTimeInSeconds = 0;
+
+            // Mostrar el botón de inicio y ocultar el botón de reinicio
+            
+            StartButton.IsVisible = true;
+            StartButton.Text = "Start";
+            ResetButton.IsVisible = false;
+
+        }
+
+        private async void OnStartButtonClicked(object sender, EventArgs e)
         {
             if (_isTimerRunning)
             {
-                // Detener el temporizador si ya est� en ejecuci�n
+                // Detener el temporizador si ya está en ejecución
                 OnStopTimer();
                 ((Button)sender).Text = "Start"; // Cambiar el texto a "Start"
-                ((Button)sender).BackgroundColor = Colors.Green;
+                ResetButton.IsVisible = false; // Ocultar el botón de Reset cuando se detiene el temporizador
             }
             else
             {
@@ -46,9 +66,16 @@ namespace Pomora.Pages
                     _timer.AutoReset = true;
                     _timer.Start();
 
-                    _isTimerRunning = true; // Marcar que el temporizador est� en ejecuci�n
+                    _isTimerRunning = true; // Marcar que el temporizador está en ejecución
                     ((Button)sender).Text = "Stop"; // Cambiar el texto a "Stop"
-                    ((Button)sender).BackgroundColor = Colors.Red;
+
+                    // Hacer visible el botón de Reset cuando el temporizador está corriendo
+                    ResetButton.IsVisible = true;
+                }
+                else
+                {
+                    // Mostrar pop-up si no se ha ingresado ningún valor
+                    await DisplayAlert("Advertencia", "Por favor, ingrese un tiempo válido antes de iniciar el temporizador.", "OK");
                 }
             }
         }
@@ -87,10 +114,10 @@ namespace Pomora.Pages
                 // Detener el temporizador cuando llegue a 0
                 MainThread.BeginInvokeOnMainThread(() =>
                 {
-                    OnStopTimer(); // Usar el m�todo de parada para limpiar todo
-                    //((Button)sender).BackgroundColor = Colors.Green;
-                    StartButton.BackgroundColor = Colors.Green;
-                    StartButton.Text = "Start"; // Cambiar el texto del bot�n de nuevo a "Start"
+                    activateVibration();
+                    OnStopTimer(); // Usar el método de parada para limpiar todo
+                    StartButton.Text = "Start"; // Cambiar el texto del botón de nuevo a "Start"
+                    ResetButton.IsVisible = false;
                     DisplayAlert("Tiempo Completo", "La cuenta regresiva ha terminado.", "OK");
                 });
             }
@@ -111,6 +138,18 @@ namespace Pomora.Pages
             else
             {
                 entry.TextColor = Colors.Red;
+            }
+        }
+        private async void activateVibration()
+        {
+            for (int i = 0; i < 3; i++) // Número de pulsos
+            {
+                Vibration.Vibrate(); // Inicia la vibración
+                
+                await Task.Delay(500); // Duración de la vibración (500 ms)
+                                       // Espera un intervalo sin vibrar
+                await Task.Delay(500); // Pausa entre pulsos (500 ms)
+                
             }
         }
     }
