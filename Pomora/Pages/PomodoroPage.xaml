@@ -3,12 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Pomora.Pages.PomodoroPage"
              Title="PomodoroPage"
-             BackgroundColor="#151515">
+              BackgroundColor="#0B0E14">
     <VerticalStackLayout Padding="20">
 
         <Frame Margin="0, 30, 0, 5"
-               BorderColor="#2C2B2B"
-               BackgroundColor="#2C2B2B"
+               BorderColor="#212631" BackgroundColor="#212631"
                CornerRadius="10"
                HasShadow="False"
                Padding="30"
@@ -61,7 +60,7 @@
                 <Button x:Name="ResetButton" Clicked="ResetPomodoro" Text="Reset" FontSize="20" FontFamily="K2DRegular" CornerRadius="200" HeightRequest="100"
                         WidthRequest="100"
                         IsVisible="False"
-                        BackgroundColor="#2C2B2B"
+                        BackgroundColor="#212631"
                         TextColor="White"></Button>
             </HorizontalStackLayout>
         </Grid>

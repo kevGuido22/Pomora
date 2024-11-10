@@ -46,6 +46,8 @@ namespace Pomora.Pages
                 // Detener el temporizador si ya está en ejecución
                 OnStopTimer();
                 ((Button)sender).Text = "Start"; // Cambiar el texto a "Start"
+                StartButton.BackgroundColor = Colors.MediumPurple;
+                StartButton.TextColor = Colors.Black;
                 ResetButton.IsVisible = false; // Ocultar el botón de Reset cuando se detiene el temporizador
             }
             else
@@ -68,6 +70,8 @@ namespace Pomora.Pages
 
                     _isTimerRunning = true; // Marcar que el temporizador está en ejecución
                     ((Button)sender).Text = "Stop"; // Cambiar el texto a "Stop"
+                    StartButton.BackgroundColor = Color.FromArgb("#DF4E4E");
+                    StartButton.TextColor = Colors.White;
 
                     // Hacer visible el botón de Reset cuando el temporizador está corriendo
                     ResetButton.IsVisible = true;

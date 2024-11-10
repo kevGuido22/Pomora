@@ -70,18 +70,10 @@ public partial class PomodoroPage : ContentPage
          ResetButton.IsVisible = true;
 
         if (isPomodoroActivated) {
-            //StartButton.Text = "Stop";
             _timer = new System.Timers.Timer(1000);
             _timer.Elapsed += OnTimedEvent;
             _timer.Enabled = true;
         }
-        //else
-        //{
-        //    StartButton.Text = "Start";
-        //    base.OnDisappearing();
-        //    _timer.Stop();
-        //    _timer.Dispose();
-        //}
     }
 
     private void StopPomodoro(object sender, EventArgs e) {

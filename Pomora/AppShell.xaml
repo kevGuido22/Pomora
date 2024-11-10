@@ -12,7 +12,7 @@
 
 
     <TabBar>
-        <Tab Title="Pomora">
+        <Tab Title="Pomodoro">
             <ShellContent ContentTemplate="{DataTemplate views:PomodoroPage}" Route="PomodoroPage"/>
         </Tab>
         <Tab Title="Chronometer">
